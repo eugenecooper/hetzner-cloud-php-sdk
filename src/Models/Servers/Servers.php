@@ -172,7 +172,7 @@ class Servers extends Model
         $networks = [],
         array $labels = [],
         array $firewalls = [],
-        array $public_net = [],
+        ?array $public_net = null,
         ?int $placement_group = null
     ): ?APIResponse {
         $parameters = [
@@ -186,13 +186,15 @@ class Servers extends Model
             'volumes' => $volumes,
             'automount' => $automount,
             'networks' => $networks,
-            'public_net' => $public_net,
         ];
         if (! empty($labels)) {
             $parameters['labels'] = $labels;
         }
         if (! empty($firewalls)) {
             $parameters['firewalls'] = $firewalls;
+        }
+        if ($public_net !== null) {
+            $parameters['public_net'] = $public_net;
         }
         if ($placement_group != null) {
             $parameters['placement_group'] = $placement_group;
@@ -250,7 +252,7 @@ class Servers extends Model
                                      array $networks = [],
                                      array $labels = [],
                                      array $firewalls = [],
-                                     array $public_net = [],
+                                     ?array $public_net = null,
                                      ?int $placement_group = null
     ): ?APIResponse {
         $parameters = [
@@ -264,13 +266,15 @@ class Servers extends Model
             'volumes' => $volumes,
             'automount' => $automount,
             'networks' => $networks,
-            'public_net' => $public_net,
         ];
         if (! empty($labels)) {
             $parameters['labels'] = $labels;
         }
         if (! empty($firewalls)) {
             $parameters['firewalls'] = $firewalls;
+        }
+        if ($public_net !== null) {
+            $parameters['public_net'] = $public_net;
         }
         if ($placement_group != null) {
             $parameters['placement_group'] = $placement_group;
