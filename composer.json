@@ -1,5 +1,5 @@
 {
-  "name": "lkdevelopment/hetzner-cloud-php-sdk",
+  "name": "eugenecooper/hetzner-cloud-php-sdk",
   "description": "An unofficial PHP SDK for the Hetzner Cloud API.",
   "type": "library",
   "keywords": [
